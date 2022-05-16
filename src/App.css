@@ -1,8 +1,49 @@
 .App {
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: 100vh;
-  background-color: #ffc8dd;
+}
+:root {
+  --firstTheme_primary: #cdb4db;
+  --firstTheme_secondary: #bde0fe;
+  --firstTheme_tertiary: #a2d2ff;
+  --firstTheme_info: #ffafcc;
+  --firstTheme_warning: #e9d8a6;
+}
+.firstTheme_primary {
+  background-color: var(--firstTheme_primary);
+}
+.firstTheme_secondary {
+  background-color: var(--firstTheme_secondary);
+}
+.firstTheme_tertiary {
+  background-color: var(--firstTheme_tertiary);
+}
+.firstTheme_info {
+  background-color: var(--firstTheme_info);
+}
+.firstTheme_warning {
+  background-color: var(--firstTheme_warning);
+}
+.firstTheme_success {
+  background-color: #6d6875;
+}
+.secondTheme_primary {
+  background-color: #8ecae6;
+}
+.secondTheme_secondary {
+  background-color: #219ebc;
+}
+.secondTheme_tertiary {
+  background-color: #023047;
+}
+.secondTheme_info {
+  background-color: #ffb703;
+}
+.secondTheme_warning {
+  background-color: #fb8500;
+}
+.secondTheme_success {
+  background-color: #006d77;
 }

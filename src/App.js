@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "./Counter/Counter";
+import { dark, light } from "./Theme/Theme";
 function App() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  const curentTheme = useSelector((state) => state.theme.value);
+  const changeTheme = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div
+      className={`App ${curentTheme}-primary`}
+      onClick={() =>
+        curentTheme == "dark" ? changeTheme(light()) : changeTheme(dark())
+      }
+    >
+      <div onClick={(e) => e.stopPropagation()}>
+        <button
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
         >
-          Learn React
-        </a>
-      </header>
+          Increment
+        </button>
+        <span>{count}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(decrement())}
+        >
+          Decrement
+        </button>
+      </div>
     </div>
   );
 }
